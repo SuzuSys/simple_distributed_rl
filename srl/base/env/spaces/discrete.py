@@ -18,7 +18,6 @@ class DiscreteSpace(SpaceBase[int]):
 
     def sample(self, invalid_actions: List[int] = []) -> int:
         assert len(invalid_actions) < self.n, f"No valid actions. {invalid_actions}"
-        assert False, random.choice([a for a in range(self.n) if a not in invalid_actions])
         return random.choice([a for a in range(self.n) if a not in invalid_actions])
 
     def convert(self, val: Any) -> int:
