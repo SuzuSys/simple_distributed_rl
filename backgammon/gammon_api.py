@@ -101,7 +101,6 @@ class BackGammon:
                         action, POINTS + 2, (POINTS + 1) * 2
                     )
         match_state: MatchStateType = self.gammon.action(action)
-        print(f'match_state: {match_state}')
         if match_state == MatchState.NOTHING:
             return False
         if match_state == MatchState.TURN_OVER:
