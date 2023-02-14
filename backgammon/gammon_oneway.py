@@ -2,12 +2,15 @@
 # from high index to low index.
 
 import random
-from typing import Optional, Tuple, List
+from typing import List, Optional, Tuple
+
 import numpy as np
 
-from .config import PIPS_COUNT, CHECKERS, HOME_POINTS, POINTS
+from .config import CHECKERS, HOME_POINTS, PIPS_COUNT, POINTS
 from .position import Position, PositionType
-from .structs import Die, Dice, UsedDice, MatchState, Move, DieType, DiceType, UsedDiceType, MatchStateType, MoveType, NumpyType
+from .structs import (Dice, DiceType, Die, DieType, MatchState, MatchStateType,
+                      Move, MoveType, NumpyType, UsedDice, UsedDiceType)
+
 
 class GammonOneway:
     def __init__(self, seed: int):
@@ -41,6 +44,7 @@ class GammonOneway:
         self.legal_plays = []
         self.dice = Dice(0,0)
         self.used_dice = UsedDice()
+        self.move_number = 0
     
     def roll(self) -> None:
         """
